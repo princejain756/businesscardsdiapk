@@ -11,8 +11,9 @@
       "src": "/(.*\\.vcf)$",
       "dest": "/docs/$1",
       "headers": {
-        "Content-Type": "text/vcard",
-        "Content-Disposition": "attachment; filename=\"$1\""
+        "Content-Type": "text/x-vcard",
+        "Content-Disposition": "attachment; filename=\"$1\"",
+        "X-Content-Type-Options": "nosniff"
       }
     },
     {
