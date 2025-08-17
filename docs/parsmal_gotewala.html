@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>पारसमल माणकचन्द गोतेवाला (Parsmal Manakchand Gotewala)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+    .contact-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .download-links {
+      display: none;
+      margin-top: 30px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: rgba(52, 152, 219, 0.8);
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+      background: rgba(52, 152, 219, 0.9);
+      transform: scale(1.05);
+    }
+    .loading {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .universal-note {
+      background: rgba(46, 204, 113, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #2ecc71;
+    }
+  </style>
+  <script>
+    function redirect() {
+      // Show loading state
+      document.getElementById("loading").style.display = "block";
+      
+      // Small delay to show loading animation
+      setTimeout(function() {
+        // Redirect to VCF for both Android and iPhone (universal compatibility)
+        window.location.href = "parsmal_gotewala.vcf";
+      }, 1500);
+    }
+  </script>
+</head>
+<body onload="redirect()">
+  <div class="container">
+    <h1>📱 पारसमल माणकचन्द गोतेवाला</h1>
+    <h2>Parsmal Manakchand Gotewala</h2>
+    
+    <div class="contact-info">
+      <h3>🏢 Business Owner</h3>
+      <p><strong>Phone:</strong> +91 92143 49888 / +91 93525 44640</p>
+      <p><strong>Address:</strong> नया बाजार, अजमेर (राज.) 305001, Ajmer, Rajasthan, India</p>
+      <p><strong>GSTIN:</strong> 08ABTPR5876K1ZI</p>
+      <p><strong>Weekly Off:</strong> मंगलवार (Tuesday)</p>
+      <p><strong>Location QR:</strong> Available</p>
+    </div>
+    
+    <div class="universal-note">
+      <p>✅ <strong>Universal Format:</strong> VCF works perfectly on both Android & iPhone!</p>
+    </div>
+    
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Redirecting to contact card...</p>
+    </div>
+    
+    <div id="download-links" class="download-links">
+      <p>If not redirected automatically, click below:</p>
+      <a href="parsmal_gotewala.vcf" class="download-btn">📱 Download vCard (.vcf)</a>
+    </div>
+  </div>
+</body>
+</html>
