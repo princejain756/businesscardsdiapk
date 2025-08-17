@@ -41,7 +41,7 @@
     }
     .download-btn {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(52, 152, 219, 0.8);
       color: white;
       padding: 12px 24px;
       text-decoration: none;
@@ -51,14 +51,8 @@
       transition: all 0.3s ease;
     }
     .download-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(52, 152, 219, 0.9);
       transform: scale(1.05);
-    }
-    .vcf-btn {
-      background: rgba(52, 152, 219, 0.8);
-    }
-    .mecard-btn {
-      background: rgba(46, 204, 113, 0.8);
     }
     .loading {
       font-size: 1.2em;
@@ -77,27 +71,23 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+    .universal-note {
+      background: rgba(46, 204, 113, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #2ecc71;
+    }
   </style>
   <script>
     function redirect() {
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      
       // Show loading state
       document.getElementById("loading").style.display = "block";
       
       // Small delay to show loading animation
       setTimeout(function() {
-        if (/android/i.test(ua)) {
-          // Android device - redirect to MECARD
-          window.location.href = "parsmal_gotewala.mecard";
-        } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-          // iOS device - redirect to VCF
-          window.location.href = "parsmal_gotewala.vcf";
-        } else {
-          // Desktop or other device - show both options
-          document.getElementById("loading").style.display = "none";
-          document.getElementById("download-links").style.display = "block";
-        }
+        // Redirect to VCF for both Android and iPhone (universal compatibility)
+        window.location.href = "parsmal_gotewala.vcf";
       }, 1500);
     }
   </script>
@@ -116,15 +106,18 @@
       <p><strong>Location QR:</strong> Available</p>
     </div>
     
+    <div class="universal-note">
+      <p>✅ <strong>Universal Format:</strong> VCF works perfectly on both Android & iPhone!</p>
+    </div>
+    
     <div id="loading" class="loading">
       <div class="spinner"></div>
-      <p>Redirecting to your device's preferred format...</p>
+      <p>Redirecting to contact card...</p>
     </div>
     
     <div id="download-links" class="download-links">
-      <p>Choose your preferred format:</p>
-      <a href="parsmal_gotewala.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
-      <a href="parsmal_gotewala.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+      <p>If not redirected automatically, click below:</p>
+      <a href="parsmal_gotewala.vcf" class="download-btn">📱 Download vCard (.vcf)</a>
     </div>
   </div>
 </body>
