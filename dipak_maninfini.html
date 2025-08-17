@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dipak Jain Srisrimal – Maninfini Automation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+    .contact-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .download-links {
+      display: none;
+      margin-top: 30px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+    .vcf-btn {
+      background: rgba(52, 152, 219, 0.8);
+    }
+    .mecard-btn {
+      background: rgba(46, 204, 113, 0.8);
+    }
+    .loading {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    function redirect() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      
+      // Show loading state
+      document.getElementById("loading").style.display = "block";
+      
+      // Small delay to show loading animation
+      setTimeout(function() {
+        if (/android/i.test(ua)) {
+          // Android device - redirect to MECARD
+          window.location.href = "dipak_maninfini.mecard";
+        } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+          // iOS device - redirect to VCF
+          window.location.href = "dipak_maninfini.vcf";
+        } else {
+          // Desktop or other device - show both options
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("download-links").style.display = "block";
+        }
+      }, 1500);
+    }
+  </script>
+</head>
+<body onload="redirect()">
+  <div class="container">
+    <h1>📱 Dipak Jain Srisrimal</h1>
+    
+    <div class="contact-info">
+      <h3>🏢 Maninfini Automation</h3>
+      <p><strong>Specialization:</strong> End-to-End Digital & Automation Solutions</p>
+      <p><strong>Phone:</strong> +91 98450 74004 / +91 82170 79563</p>
+      <p><strong>Email:</strong> info@maninfini.com</p>
+      <p><strong>Website:</strong> www.maninfini.com</p>
+      <p><strong>Address:</strong> #20, Ground Floor, 12th Cross, Cubbonpet, Banappa Park Road, Bengaluru 560002, India</p>
+      <p><strong>Services:</strong> WhatsApp bots, Enterprise ERP, Custom Development, Intelligent Systems</p>
+    </div>
+    
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Redirecting to your device's preferred format...</p>
+    </div>
+    
+    <div id="download-links" class="download-links">
+      <p>Choose your preferred format:</p>
+      <a href="dipak_maninfini.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+      <a href="dipak_maninfini.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+    </div>
+  </div>
+</body>
+</html>

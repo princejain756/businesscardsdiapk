@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Contact Cards</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .contact-card h3 {
+            margin: 0 0 15px 0;
+            color: #fff;
+            font-size: 1.3em;
+        }
+        .download-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .download-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+        .vcf-btn {
+            background: rgba(52, 152, 219, 0.8);
+        }
+        .mecard-btn {
+            background: rgba(46, 204, 113, 0.8);
+        }
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 5px 0;
+        }
+        .device-detect {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Business Contact Cards</h1>
+        
+        <div class="device-detect" id="deviceInfo">
+            <p>Detecting your device...</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Neerajj Jain</h3>
+                <p><strong>Lotus Global FZC</strong><br>Managing Director</p>
+                <div class="download-links">
+                    <a href="neerajj_lotus.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+                    <a href="neerajj_lotus.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Dinesh Kumar Jain F.C.A</h3>
+                <p><strong>Marudhar Stones International Pvt. Ltd</strong></p>
+                <div class="download-links">
+                    <a href="dinesh_marudhar.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+                    <a href="dinesh_marudhar.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Dipak Jain Srisrimal</h3>
+                <p><strong>Maninfini Automation</strong><br>Digital & Automation Solutions</p>
+                <div class="download-links">
+                    <a href="dipak_maninfini.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+                    <a href="dipak_maninfini.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Dipak Jain Srisrimal</h3>
+                <p><strong>Meghdoot Textiles Pvt Ltd</strong></p>
+                <div class="download-links">
+                    <a href="dipak_meghdoot.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+                    <a href="dipak_meghdoot.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Parsmal Manakchand Gotewala</h3>
+                <p><strong>Business Owner</strong><br>Ajmer, Rajasthan</p>
+                <div class="download-links">
+                    <a href="parsmal_gotewala.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+                    <a href="parsmal_gotewala.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3>Manish Enterprises</h3>
+                <p><strong>Business Enterprise</strong><br>Ajmer, Rajasthan</p>
+                <div class="download-links">
+                    <a href="manish_enterprises.vcf" class="download-btn vcf-btn">📱 VCF (iPhone)</a>
+                    <a href="manish_enterprises.mecard" class="download-btn mecard-btn">🤖 MECARD (Android)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use</h3>
+            <ul>
+                <li><strong>iPhone Users:</strong> Download VCF files and open them to add contacts</li>
+                <li><strong>Android Users:</strong> Download MECARD files and scan with contact apps</li>
+                <li><strong>QR Codes:</strong> Generate QR codes for each file URL for easy sharing</li>
+                <li><strong>Direct Links:</strong> Share the direct file URLs for instant downloads</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>🔗 Direct File URLs</h3>
+            <p>Once GitHub Pages is enabled, your files will be accessible at:</p>
+            <ul>
+                <li><code>https://princejain756.github.io/businesscardsdiapk/filename.vcf</code></li>
+                <li><code>https://princejain756.github.io/businesscardsdiapk/filename.mecard</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Device detection and smart redirect
+        function detectDevice() {
+            const userAgent = navigator.userAgent;
+            const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+            const isAndroid = /Android/.test(userAgent);
+            
+            let deviceInfo = document.getElementById('deviceInfo');
+            
+            if (isIOS) {
+                deviceInfo.innerHTML = '<p>📱 <strong>iOS Device Detected</strong><br>VCF files are recommended for your device</p>';
+            } else if (isAndroid) {
+                deviceInfo.innerHTML = '<p>🤖 <strong>Android Device Detected</strong><br>MECARD files are recommended for your device</p>';
+            } else {
+                deviceInfo.innerHTML = '<p>💻 <strong>Desktop/Other Device</strong><br>Both formats are available for download</p>';
+            }
+        }
+
+        // Auto-download based on device (optional)
+        function autoDownload() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const autoDownload = urlParams.get('auto');
+            
+            if (autoDownload) {
+                const userAgent = navigator.userAgent;
+                const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+                const isAndroid = /Android/.test(userAgent);
+                
+                if (isIOS && autoDownload.includes('vcf')) {
+                    window.location.href = autoDownload;
+                } else if (isAndroid && autoDownload.includes('mecard')) {
+                    window.location.href = autoDownload;
+                }
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            detectDevice();
+            autoDownload();
+        });
+    </script>
+</body>
+</html>
