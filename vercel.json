@@ -9,6 +9,7 @@
   "routes": [
     {
       "src": "/(.*\\.vcf)$",
+      "dest": "/docs/$1",
       "headers": {
         "Content-Type": "text/vcard",
         "Content-Disposition": "attachment; filename=\"$1\""
@@ -16,6 +17,7 @@
     },
     {
       "src": "/(.*\\.mecard)$",
+      "dest": "/docs/$1",
       "headers": {
         "Content-Type": "text/plain",
         "Content-Disposition": "attachment; filename=\"$1\""
@@ -23,24 +25,28 @@
     },
     {
       "src": "/(.*\\.html)$",
+      "dest": "/docs/$1",
       "headers": {
         "Content-Type": "text/html; charset=utf-8"
       }
     },
     {
       "src": "/(.*\\.css)$",
+      "dest": "/docs/$1",
       "headers": {
         "Content-Type": "text/css; charset=utf-8"
       }
     },
     {
       "src": "/(.*\\.js)$",
+      "dest": "/docs/$1",
       "headers": {
         "Content-Type": "application/javascript; charset=utf-8"
       }
     },
     {
       "src": "/(.*\\.md)$",
+      "dest": "/docs/$1",
       "headers": {
         "Content-Type": "text/markdown; charset=utf-8"
       }
