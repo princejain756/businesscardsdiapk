@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "docs/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*\\.vcf)$",
+      "headers": {
+        "Content-Type": "text/vcard",
+        "Content-Disposition": "attachment; filename=\"$1\""
+      }
+    },
+    {
+      "src": "/(.*\\.mecard)$",
+      "headers": {
+        "Content-Type": "text/plain",
+        "Content-Disposition": "attachment; filename=\"$1\""
+      }
+    },
+    {
+      "src": "/(.*\\.html)$",
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "src": "/(.*\\.css)$",
+      "headers": {
+        "Content-Type": "text/css; charset=utf-8"
+      }
+    },
+    {
+      "src": "/(.*\\.js)$",
+      "headers": {
+        "Content-Type": "application/javascript; charset=utf-8"
+      }
+    },
+    {
+      "src": "/(.*\\.md)$",
+      "headers": {
+        "Content-Type": "text/markdown; charset=utf-8"
+      }
+    },
+    {
+      "src": "/",
+      "dest": "/docs/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/docs/$1"
+    }
+  ]
+}
